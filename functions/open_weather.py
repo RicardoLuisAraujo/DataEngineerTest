@@ -1,8 +1,9 @@
 """
 
-This document has one class (OpenWeather) that gets the information to parse the OpenWeatherAPI from a ini config file and
-creates a ready-to-use pandas dataframe. The doc has various functions that can be reused later in a similar 
-similar task if needed. All functions are explained in further detail below.
+This document has one several functions that get the information to parse
+the OpenWeatherAPI from an ini config file and creates a ready-to-use pandas dataframe.
+The doc has various functions that can be reused later in a similar similar task if needed.
+All functions are explained in further detail below.
 
 """
 
@@ -63,7 +64,8 @@ def parsing_ow_json(api_fields: configparser.SectionProxy, json_data: dict, city
     ---------------
     api_fields: configparser.SectionProxy
         A section from the config file. This section includes all 
-        the data that the user wants to take out.
+        the data that the user wants to take out. Works similar
+        to a dictionary.
 
     json_data: dict
         Dictionary with all the data from the city the user chose.
@@ -78,18 +80,19 @@ def parsing_ow_json(api_fields: configparser.SectionProxy, json_data: dict, city
         Dictionary with all the data from the city and ready to be
         turned/added into a Pandas dataframe.
     """
-    
+    # Creating an empty dict that will be populated with a certain city's data. 
     cities_dict = {}
     cities_dict['city'] = city
-    
-    keys_list = list(api_fields)
-    for key, value in api_fields.items():
-        fields = string_to_list(value)
-        
 
+    # For each key value pair in the api_fields section,
+    # turn the values into list.
     for key, value in api_fields.items():
                 fields = string_to_list(value)
+            
+            # Iterate over each value in values
                 for field in fields:
+                    
+                    # Get data from the API JSON and storing it in the dict
                     if key == 'other':
                         cities_dict[field] = json_data[field]
                     else:
@@ -129,10 +132,13 @@ def get_weather(url: str, api_key: str, cities: list, api_fields: configparser.S
         Pandas Dataframe with all the data from the city and ready to be
         used.
     """
+    
+    # Creating a new empty dataframe
     weather_df = pd.DataFrame()
     
     for city_name in cities:
 
+        # Completing the url to connect to the API
         complete_url = connect_api(url, api_key, city_name)
         
         # get method of requests module
@@ -145,13 +151,15 @@ def get_weather(url: str, api_key: str, cities: list, api_fields: configparser.S
         x = response.json()
         
         # Now x contains list of nested dictionaries
-        # Check the value of "cod" key is equal to
+        # Check the value of "cod" key is different to
         # "404", means city is found otherwise,
         # city is not found
         if x["cod"] != "404":
             
+            # Getting the information from the API into a dict
             cities_dict = parsing_ow_json(api_fields, x, city_name)
 
+            # Appeding to the dataframe the dictionary with the data from one city 
             weather_df = weather_df.append(cities_dict, ignore_index=True)
         else:
             print(" City Not Found ")
