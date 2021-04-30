@@ -1,0 +1,13 @@
+city,clouds_all,coord_lat,coord_lon,dt,main_feels_like,main_humidity,main_pressure,main_temp,sys_country,weather_description,wind_deg,wind_speed,day,month,year
+Lisbon,40.0,38.7167,-9.1333,2021-04-30 14:04:58,289.33,42.0,1013.0,290.45,PT,scattered clouds,310.0,5.14,Friday,April,2021
+Porto,20.0,41.1496,-8.611,2021-04-30 14:06:09,287.87,58.0,1012.0,288.74,PT,few clouds,330.0,8.23,Friday,April,2021
+Aveiro,20.0,40.6443,-8.6455,2021-04-30 14:03:32,288.42,59.0,1012.0,289.22,PT,few clouds,340.0,8.23,Friday,April,2021
+Coimbra,40.0,40.2056,-8.4195,2021-04-30 14:07:13,288.6,51.0,1013.0,289.57,PT,scattered clouds,340.0,6.69,Friday,April,2021
+Madrid,75.0,40.4165,-3.7026,2021-04-30 14:03:45,287.93,44.0,1009.0,289.13,ES,broken clouds,200.0,4.63,Friday,April,2021
+Los Angeles,1.0,34.0522,-118.2437,2021-04-30 14:03:45,289.44,48.0,1018.0,290.41,US,clear sky,70.0,0.54,Friday,April,2021
+Tokyo,40.0,35.6895,139.6917,2021-04-30 14:04:08,290.19,59.0,1005.0,290.83,JP,scattered clouds,20.0,6.17,Friday,April,2021
+Seoul,90.0,37.5683,126.9778,2021-04-30 14:03:56,283.29,76.0,1007.0,284.15,KR,overcast clouds,170.0,2.06,Friday,April,2021
+Oslo,61.0,59.9127,10.7461,2021-04-30 14:02:45,281.38,31.0,1012.0,283.48,NO,broken clouds,231.0,0.89,Friday,April,2021
+Shanghai,0.0,31.2222,121.4581,2021-04-30 14:05:32,300.39,39.0,1003.0,300.71,CN,light rain,250.0,5.0,Friday,April,2021
+Paris,0.0,48.8534,2.3488,2021-04-30 14:03:14,284.38,43.0,1013.0,285.92,FR,clear sky,20.0,3.09,Friday,April,2021
+Manchester,75.0,53.4809,-2.2374,2021-04-30 14:05:03,282.44,49.0,1015.0,284.02,GB,broken clouds,310.0,4.12,Friday,April,2021
